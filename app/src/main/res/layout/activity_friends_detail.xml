@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FriendsDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_friend_detail"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/toolbarText" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgFriendAva"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/toolbarDetail"
+            android:layout_margin="20dp"
+            tools:src="@drawable/ava1"
+            android:layout_centerHorizontal="true"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="3dp"/>
+
+        <TextView
+            android:id="@+id/tvFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/my_name"
+            android:layout_below="@id/imgFriendAva"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvFriendNIM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/my_nim"
+            android:layout_below="@id/tvFriendName"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/tvFriendClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/my_class"
+            android:layout_below="@id/tvFriendNIM"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvFriendClass"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/lytPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:background="@drawable/item_background">
+
+                <ImageView
+                    android:id="@+id/imgPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/phone"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="20dp"
+                    android:src="@drawable/ic_phone_android_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imgPhone"
+                    android:layout_marginTop="13dp"
+                    android:textColor="@color/colorMuted"
+                    android:text="@string/phone" />
+
+                <TextView
+                    android:id="@+id/tvFriendPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/my_number"
+                    android:textSize="15sp"
+                    android:layout_below="@id/tvPhone"
+                    android:layout_toEndOf="@id/imgPhone"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lytEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="onClick"
+                android:background="@drawable/item_background">
+
+                <ImageView
+                    android:id="@+id/imgEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/phone"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="20dp"
+                    android:src="@drawable/ic_mail_outline_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imgEmail"
+                    android:layout_marginTop="13dp"
+                    android:textColor="@color/colorMuted"
+                    android:text="@string/email" />
+
+                <TextView
+                    android:id="@+id/tvFriendEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/my_email"
+                    android:textSize="15sp"
+                    android:layout_below="@id/tvEmail"
+                    android:layout_toEndOf="@id/imgEmail"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lytIg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="onClick"
+                android:background="@drawable/item_background">
+
+                <ImageView
+                    android:id="@+id/imgIg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/phone"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="20dp"
+                    android:tint="@android:color/white"
+                    android:src="@drawable/ic_instagram" />
+
+                <TextView
+                    android:id="@+id/tvIg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imgIg"
+                    android:layout_marginTop="13dp"
+                    android:textColor="@color/colorMuted"
+                    android:text="@string/instagram" />
+
+                <TextView
+                    android:id="@+id/tvFriendIg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/my_ig"
+                    android:textSize="15sp"
+                    android:layout_below="@id/tvIg"
+                    android:layout_toEndOf="@id/imgIg"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
